@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie App</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="header-title">
+                <a class="title" href="index.html">Movie App</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <!-- <ul class="header-list">
+                <li class="list-item" id="listItem">
+                    <button class="header-dropdown-btn">
+                        <span class="material-symbols-outlined">person</span>
+                        <div class="header-dropdown-content" id="profileDrop">
+                            <div class="header-dropdown-inner">
+                                <div class="header-dropdown-wrap" id="firstProfileWrap">
+                                    <a class="header-drop-link" href="javascript:void(0);">
+                                        <span class="dropdown-span-profile">Profile</span>
+                                    </a>
+                                    <span class="material-symbols-outlined">manage_accounts</span>
+                                </div>
+                                <span class="line-break"></span>
+                                <div class="header-dropdown-wrap" id="lastProfileWrap">
+                                    <a class="header-drop-link" href="javascript:void(0);">
+                                        <span class="dropdown-span-log">Sign out</span>
+                                    </a>
+                                    <span class="material-symbols-outlined">logout</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </li>
+            </ul> -->
+        </div>
+    </header>
+
+    <!-- Popup -->
+    <div id="moviePopup" class="popup">
+        <div class="popup-content">
+            <div class="popup-top">
+                <div class="popup-top-left">
+                </div>
+                <div class="popup-top-right">
+                    <span class="material-symbols-outlined close" onclick="closePopup()">
+                        close
+                    </span>
+                </div>
+            </div>
+            <div class="popup-middle">
+                <div class="poster-image"></div>
+                <div class="name-desc">
+                    <div class="modal-name"></div>
+                    <div class="modal-desc"></div>
+                </div>
+            </div>
+            <div class="popup-bottom">
+            </div>
+        </div>
+        <!--  -->
+
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="content-header">
+                <div class="content-header-left">
+                    <form class="search-box">
+                        <input type="text" class="search-field" id="searchField" placeholder="Type something..">
+                        <button class="search-btn" type="submit" onclick="searchMovies(event, this)">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="content-header-right">
+                    <span class="filter-title">Filter</span>
+                    <div class="content-header-dropdown" style="margin-left: .5rem;">
+                        <button class="header-dropdown-btn">
+                            <span class="material-symbols-outlined">filter_list</span>
+                            <div class="header-dropdown-content" id="profileDrop">
+                                <div class="header-dropdown-inner">
+                                    <div class="header-dropdown-wrap" id="firstProfileWrap">
+                                        <a class="header-drop-link" href="javascript:void(0);"
+                                            onclick="getPopular()">Popular</a>
+                                    </div>
+                                    <span class="line-break"></span>
+
+                                    <div class="header-dropdown-wrap">
+                                        <a class="header-drop-link" href="javascript:void(0);" onclick="topRated()">Top
+                                            Rated</a>
+                                    </div>
+                                    <span class="line-break"></span>
+                                    <div class="header-dropdown-wrap" id="lastProfileWrap">
+                                        <a class="header-drop-link" href="javascript:void(0);"
+                                            onclick="upcomingMovies()">Upcoming</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-inner" id="innerContent">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

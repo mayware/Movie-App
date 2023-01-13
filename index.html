@@ -27,33 +27,8 @@
             </div>
         </div>
         <div class="header-right">
-            <!-- <ul class="header-list">
-                <li class="list-item" id="listItem">
-                    <button class="header-dropdown-btn">
-                        <span class="material-symbols-outlined">person</span>
-                        <div class="header-dropdown-content" id="profileDrop">
-                            <div class="header-dropdown-inner">
-                                <div class="header-dropdown-wrap" id="firstProfileWrap">
-                                    <a class="header-drop-link" href="javascript:void(0);">
-                                        <span class="dropdown-span-profile">Profile</span>
-                                    </a>
-                                    <span class="material-symbols-outlined">manage_accounts</span>
-                                </div>
-                                <span class="line-break"></span>
-                                <div class="header-dropdown-wrap" id="lastProfileWrap">
-                                    <a class="header-drop-link" href="javascript:void(0);">
-                                        <span class="dropdown-span-log">Sign out</span>
-                                    </a>
-                                    <span class="material-symbols-outlined">logout</span>
-                                </div>
-                            </div>
-                        </div>
-                    </button>
-                </li>
-            </ul> -->
         </div>
     </header>
-
     <!-- Popup -->
     <div id="moviePopup" class="popup">
         <div class="popup-content">
@@ -77,11 +52,26 @@
             </div>
         </div>
         <!--  -->
-
     </div>
     <div class="container">
+        <!-- Slider -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img class="slider-img" src="./assets/scream_banner.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img class="slider-img" src="./assets/the_vietnam_war_banner.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img class="slider-img" src="./assets/interstellar_banner.jpg" style="width:100%">
+            </div>
+        </div>
+        <!--  -->
         <div class="content">
-            <div class="content-header">
+            <div class="content-header" id="contentHeader">
                 <div class="content-header-left">
                     <form class="search-box">
                         <input type="text" class="search-field" id="searchField" placeholder="Type something..">
@@ -91,7 +81,7 @@
                     </form>
                 </div>
                 <div class="content-header-right">
-                    <span class="filter-title">Filter</span>
+                    <span class="filter-title">Sort by</span>
                     <div class="content-header-dropdown" style="margin-left: .5rem;">
                         <button class="header-dropdown-btn">
                             <span class="material-symbols-outlined">filter_list</span>
@@ -102,7 +92,6 @@
                                             onclick="getPopular()">Popular</a>
                                     </div>
                                     <span class="line-break"></span>
-
                                     <div class="header-dropdown-wrap">
                                         <a class="header-drop-link" href="javascript:void(0);" onclick="topRated()">Top
                                             Rated</a>
@@ -123,6 +112,35 @@
         </div>
 
     </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000);
+        }
+    </script>
+    <script>
+        window.onscroll = function () { myFunction() };
+        var navbar = document.getElementById("contentHeader");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 
     <script src="app.js"></script>
 </body>

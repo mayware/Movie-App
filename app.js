@@ -81,6 +81,7 @@ function trailerGetter(trailer) {
     trailerBtn.href = `https://www.youtube.com/watch?v=${keys}`;
 }
 
+// Filter
 function upcomingMovies() {
     fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=8f19282bc85d738ef80cb64cec2c3854&language=en-US`)
         .then(res => res.json()).then(data => movieList(data.results));
@@ -95,6 +96,8 @@ function getPopular() {
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=8f19282bc85d738ef80cb64cec2c3854`)
         .then(res => res.json()).then(data => movieList(data.results));
 }
+// 
+
 function movieList(movie) {
     document.getElementById('innerContent').innerHTML = '';
     for (let i = 0; i < movie.length; i++) {

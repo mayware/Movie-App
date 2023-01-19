@@ -400,7 +400,7 @@ body {
     border-radius: 5px;
 }
 
-.modal-name .title-span {
+.modal-name {
     display: inline-block;
     margin-bottom: 1rem;
     font-weight: 800;
@@ -424,7 +424,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: .5rem;
+    margin-top: .3rem;
     padding: .5rem;
     border-radius: 5px;
     background-color: #212529;
@@ -440,7 +440,7 @@ body {
 }
 
 .yt-btn:hover {
-    background-color: #e63946;
+    background-color: #c1292e;
     transition: 200ms ease-in-out;
 }
 

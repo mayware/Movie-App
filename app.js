@@ -35,9 +35,12 @@ function searchMovies(e, elem) {
 
 var popupEntire = document.querySelector('.popup');
 function modalBtn(elem) {
+
+    console.log(elem);
+    console.log(elem.children.item(1).innerText);
     popupEntire.style.display = "block";
 
-    let id = elem.nextSibling.nextSibling.nextSibling.innerHTML;
+    let id = elem.lastElementChild.innerHTML;
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=8f19282bc85d738ef80cb64cec2c3854&language=en-US`)
         .then(res => res.json())
         .then(data => trailerGetter(data.results));
@@ -58,9 +61,9 @@ function modalBtn(elem) {
     trailerLink.innerHTML += 'Watch trailer';
     ytBtn.append(trailerLink);
     modalFooter.append(ytBtn, likeBtn);
-    posterImage.innerHTML = elem.innerHTML;
-    modalDesc.innerHTML = elem.nextSibling.nextSibling.lastElementChild.innerHTML;
-    modalName.innerHTML = elem.nextSibling.innerHTML;
+    posterImage.innerHTML = elem.children.item(0).innerHTML;
+    modalDesc.innerHTML = elem.children.item(2).children.item(2).innerText;
+    modalName.innerHTML = elem.children.item(1).innerText;
 }
 
 function closePopup() {
@@ -119,7 +122,7 @@ function movieList(movie) {
             movieBlock.id = 'movieBlock';
             moviePoster.classList.add('movie-poster');
             moviePoster.href = "javascript:void(0)";
-            moviePoster.setAttribute('onclick', 'modalBtn(this)');
+            movieBlock.setAttribute('onclick', 'modalBtn(this)');
             posterImg.classList.add('poster');
             movieTitle.classList.add('movie-title');
             titleSpan.classList.add('title-span');
